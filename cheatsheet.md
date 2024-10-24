@@ -43,6 +43,25 @@ $ git checkout -b BRANCH_NAME
 #
 $ git push --set-upstream origin LOCAL_BRANCH_NAME
 
+# Delete local branch
+$ git checkout master
+$ git pull
+$ git branch -d BRANCH_NAME_TO_DELETE
+
+# Pull vs Pull Rebase (merge branch commit)
+$ git pull --rebase
+
+#
+$ git stash
+$ git stash pop
+
+# Going back in history
+$ git log
+$ git checkout COMMIT_HASH
+
+# Undo commit
+$ git reset --hard HEAD~1
+
 
 ```
 
