@@ -59,9 +59,30 @@ $ git stash pop
 $ git log
 $ git checkout COMMIT_HASH
 
-# Undo commit
+# Undo commit by discarding it and its changes
+$ # MAKE THE CHANGE THEN COMMIT
 $ git reset --hard HEAD~1
 
+# Undo a commit by discarding it but its changes will be brought back to the pre-staging area
+$ # MAKE THE CHANGE THEN COMMIT
+$ git reset --soft HEAD~1
 
+# Commit the changes to the last commit. Or introduce a change to the last commit without discarding it.
+$ # MAKE THE CHANGE THEN COMMIT
+$ git commit --amend
+
+# Undo commit that was pushed for Merge/Pull Request
+$ # PUSH THE COMMIT
+$ git reset --hard HEAD~1
+$ git push --force
+
+#
+$ git revert COMMIT_HASH
+
+# Pulling changes from the updated master local branch to your WIP branch
+$ git checkout master
+$ git pull
+$ git checkout WIP_BRANCH
+$ git merge master
 ```
 
